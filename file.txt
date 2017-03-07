@@ -1,66 +1,45 @@
-gpgme-1.8.0-10.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-4cd637d375
+container-selinux-2.10-1.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-02001fefbc
 	        status: testing
-	date_submitted: 2017-02-05 14:59:03
+	date_submitted: 2017-03-03 12:51:28
 
-gnutls-3.5.8-2.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-45815d8038
+atomic-devmode-0.3.6-1.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-4d596bf343
 	        status: testing
-	date_submitted: 2017-02-04 22:50:52
+	date_submitted: 2017-02-27 17:11:02
 
-kernel-4.9.7-201.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-472052ebe5
+atomic-1.15.3-2.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-1def5655ad
 	        status: testing
-	date_submitted: 2017-02-03 15:36:07
+	date_submitted: 2017-02-08 14:47:00
 
-socat-1.7.3.2-1.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-391e24bbc9
+oci-systemd-hook-0.1.5-1.git16f7c8a.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-8a6b1e478c
 	        status: testing
-	date_submitted: 2017-02-03 00:55:09
+	date_submitted: 2017-02-08 13:49:56
 
-runc-1.0.0-5.rc2.gitc91b5be.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-6319e78c81
-	        status: testing
-	date_submitted: 2017-02-01 21:37:36
-
-python3-docs-3.5.3-1.fc25
-python3-3.5.3-1.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-ae05043e23
-	        status: testing
-	date_submitted: 2017-02-01 15:03:13
-
-atomic-1.15.2-1.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-b677c4a509
-	        status: testing
-	date_submitted: 2017-01-31 16:09:35
-
-docker-1.12.6-6.gitae7d637.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-1f25542810
-	        status: testing
-	date_submitted: 2017-01-30 16:36:56
-
-flannel-0.7.0-2.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-44e53aabed
-	        status: testing
-	date_submitted: 2017-01-24 09:55:43
-
-screen-4.5.0-1.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-4e71ba21ae
-	        status: testing
-	date_submitted: 2017-01-23 14:06:27
-
-etcd-3.0.17-1.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-ef9ba616c9
-	        status: testing
-	date_submitted: 2017-01-23 11:34:08
-
-openssl-1.0.2k-1.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-3451dbec48
+rpm-ostree-2017.3-1.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-003fa5648c
 	        status: pending
-	date_submitted: 2017-02-06 17:34:40
+	date_submitted: 2017-03-06 19:47:40
 
-openssh-7.4p1-2.fc25
-	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-40057be2c5
+fedora-repos-25-3	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-a513209618
 	        status: pending
-	date_submitted: 2017-02-06 11:51:51
+	date_submitted: 2017-03-06 19:17:01
+
+gssproxy-0.6.2-4.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-274a1befad
+	        status: pending
+	date_submitted: 2017-03-06 16:49:48
+
+gnutls-3.5.10-1.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-5a55b061cb
+	        status: pending
+	date_submitted: 2017-03-06 10:47:34
+
+nss-pem-1.0.3-2.fc25	signed:True
+	           url: https://bodhi.fedoraproject.org/updates/FEDORA-2017-9778e2d516
+	        status: pending
+	date_submitted: 2017-03-01 15:14:53
 

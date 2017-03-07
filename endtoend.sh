@@ -14,5 +14,7 @@ popd
 
 # creates disk image from the ostree
 ./builddisk.sh ostreerepo/ 
-
 # disk image is in cwd *.qcow2
+
+# run the atomic-host-tests
+./runtests.sh *.qcow2
