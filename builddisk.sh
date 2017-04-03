@@ -24,7 +24,7 @@ python -m SimpleHTTPServer &
 popd
 
 # Change into tmpdir
-cp fedora-atomic.ks $tmpdir/
+#cp fedora-atomic.ks $tmpdir/
 pushd $tmpdir
 
 # Grab the kickstart file
@@ -35,7 +35,7 @@ sed -i 's|url=https://kojipkgs.fedoraproject.org/atomic/25/|url=http://192.168.1
 # Set the ref to be the right one
 sed -i 's|--ref=fedora-atomic/25/x86_64/updates/docker-host|--ref=fedora-atomic/25/x86_64/docker-host|' ./fedora-atomic.ks
 # point to upstream
-sed -i 's|\(%post.*$\)|\1\nostree remote delete fedora-atomic\nostree remote add --set=gpgverify=false fedora-atomic https://kojipkgs.fedoraproject.org/atomic/25/|' ./fedora-atomic.ks
+sed -i 's|\(%post.*$\)|\1\nostree remote delete fedora-atomic\nostree remote add --set=gpg-verify=false fedora-atomic https://kojipkgs.fedoraproject.org/atomic/25/|' ./fedora-atomic.ks
 
 # Create a tdl file for imagefactory
 #       <install type='url'>
