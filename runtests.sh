@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux -o pipefail
 
-#git clone -b dusty-disable-rpm-ostree-upgrade https://github.com/dustymabe/atomic-host-tests.git
+git clone -b dusty-disable-rpm-ostree-upgrade https://github.com/dustymabe/atomic-host-tests.git
 currentdir=$(pwd)
 
 cat <<EOF > jobname.cfg
