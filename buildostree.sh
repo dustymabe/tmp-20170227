@@ -41,9 +41,9 @@ cat <<EOF > fedora-atomic/local.repo
 name=local
 baseurl=file://$localyumrepopath
 enabled=1
+gpgcheck=0
 EOF
 sed -i 's/"fedora-25-updates"/ "fedora-25-updates"\, "local"/' fedora-atomic/$treefile
-sed -i 's/gpgcheck=1/gpgcheck=0/' fedora-atomic/*repo # some updates aren't signed yet
 
 # Do the compose
 sudo rpm-ostree compose tree --repo=${origdir}/ostreerepo --cachedir=${origdir}/cachedir/ fedora-atomic/$treefile
