@@ -7,6 +7,8 @@ trap 'rm -rf $rpmsdir' EXIT SIGHUP SIGINT SIGTERM
 
 pushd $rpmsdir
 bodhi updates download --updateid=$1
+# TODO add support for testing koji builds
+# koji download-build $1
 popd
 
 # creates ostree from stable + rpms
