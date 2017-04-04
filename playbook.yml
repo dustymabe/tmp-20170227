@@ -1,4 +1,5 @@
 - hosts: all
+   tasks:
     # Install packages
    #- name: install yum-utils
    #  yum: name=yum-utils state=latest
