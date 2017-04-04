@@ -33,7 +33,7 @@ createrepo $localyumrepopath
 pushd $tmpdir
 
 # Clone the fedora-atomic git repo
-git clone -b f25 https://pagure.io/fedora-atomic.git
+git clone -b f26 https://pagure.io/fedora-atomic.git
 
 # Create a yum repo file
 cat <<EOF > fedora-atomic/local.repo
@@ -43,7 +43,8 @@ baseurl=file://$localyumrepopath
 enabled=1
 gpgcheck=0
 EOF
-sed -i 's/"fedora-25-updates"/ "fedora-25-updates"\, "local"/' fedora-atomic/$treefile
+sed -i 's/"fedora-26-updates-testing"/"local"/' fedora-atomic/$treefile
+sed -i 's/gpgcheck=1/gpgcheck=0/' fedora-atomic/fedora-26.repo
 
 # Do the compose
 sudo rpm-ostree compose tree --repo=${origdir}/ostreerepo --cachedir=${origdir}/cachedir/ fedora-atomic/$treefile

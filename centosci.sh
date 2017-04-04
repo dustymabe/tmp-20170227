@@ -13,11 +13,11 @@ cd tmp-20170227
 ansible-playbook -i localhost, -c local playbook.yml
 
 # pull iso from artifacts.ci.centos.org
-curl -O http://artifacts.ci.centos.org/sig-atomic/expires-7-days/Fedora-Everything-netinst-x86_64-25-1.3.iso
+curl -O http://artifacts.ci.centos.org/sig-atomic/expires-7-days/Fedora-Everything-netinst-x86_64-26-20170404.n.0.iso
 
 # pull container from artifacts.ci.centos.org
-curl -O http://artifacts.ci.centos.org/sig-atomic/expires-7-days/f25image.tar.xz
-docker load -i image ./f25image.tar.xz
+curl -O http://artifacts.ci.centos.org/sig-atomic/expires-7-days/f26image.tar.xz
+docker load -i image ./f26image.tar.xz
 
 # build container
-docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash
+docker run -it --rm -v $(pwd)/:/cwd/ --privileged f26image /bin/bash

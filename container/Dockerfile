@@ -13,6 +13,9 @@ RUN dnf install --assumeyes \
         tunir ansible         \
         && dnf clean all
 
+#RUN dnf --releasever 26 update -y rpm-ostree ostree
+RUN dnf --releasever 26 update -y ostree https://kojipkgs.fedoraproject.org//work/tasks/4842/18934842/rpm-ostree-2017.3-4.fc26.x86_64.rpm
+
 #LABEL RUN 
 
 RUN dnf update -y https://kojipkgs.fedoraproject.org/work/tasks/5384/18935384/rpm-ostree-2017.3-4.fc25.x86_64.rpm

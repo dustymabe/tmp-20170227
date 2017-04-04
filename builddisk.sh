@@ -28,14 +28,14 @@ popd
 pushd $tmpdir
 
 # Grab the kickstart file
-curl -O -L https://pagure.io/fedora-kickstarts/raw/f25/f/fedora-atomic.ks
+curl -O -L https://pagure.io/fedora-kickstarts/raw/f26/f/fedora-atomic.ks
 
 # Put new url into the kickstart file
-sed -i 's|url=https://kojipkgs.fedoraproject.org/atomic/25/|url=http://192.168.122.1:8000/|' ./fedora-atomic.ks
+sed -i 's|url=https://kojipkgs.fedoraproject.org/compose/atomic/26/|url=http://192.168.122.1:8000/|' ./fedora-atomic.ks
 # Set the ref to be the right one
-sed -i 's|--ref=fedora-atomic/25/x86_64/updates/docker-host|--ref=fedora-atomic/25/x86_64/docker-host|' ./fedora-atomic.ks
+#sed -i 's|--ref=fedora-atomic/26/x86_64/docker-host|--ref=fedora-atomic/25/x86_64/docker-host|' ./fedora-atomic.ks
 # point to upstream
-sed -i 's|\(%post.*$\)|\1\nostree remote delete fedora-atomic\nostree remote add --set=gpg-verify=false fedora-atomic https://kojipkgs.fedoraproject.org/atomic/25/|' ./fedora-atomic.ks
+sed -i 's|\(%post.*$\)|\1\nostree remote delete fedora-atomic\nostree remote add --set=gpg-verify=false fedora-atomic https://kojipkgs.fedoraproject.org/compose/atomic/26/|' ./fedora-atomic.ks
 
 # Create a tdl file for imagefactory
 #       <install type='url'>
@@ -49,7 +49,7 @@ cat <<EOF >./fedora-25.tdl
         <version>22</version>
         <arch>x86_64</arch>
         <install type='iso'>
-            <iso>file://${currentdir}/Fedora-Everything-netinst-x86_64-25-1.3.iso</iso>
+            <iso>file://${currentdir}/Fedora-Everything-netinst-x86_64-26-20170404.n.0.iso</iso>
         </install>
         <rootpw>password</rootpw>
         <kernelparam>console=ttyS0</kernelparam>
