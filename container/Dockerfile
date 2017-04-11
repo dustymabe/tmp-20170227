@@ -15,8 +15,7 @@ RUN dnf install --assumeyes \
 
 #LABEL RUN 
 
-RUN dnf update -y
-https://kojipkgs.fedoraproject.org/work/tasks/5384/18935384/rpm-ostree-2017.3-4.fc25.x86_64.rpm
+RUN dnf update -y https://kojipkgs.fedoraproject.org/work/tasks/5384/18935384/rpm-ostree-2017.3-4.fc25.x86_64.rpm
 
 #STOPSIGNAL SIGRTMIN+3
 #CMD [ "/sbin/init" ]
