@@ -19,6 +19,11 @@ chpasswd: { expire: False }
 ssh_pwauth: True
 '
 
+METADATA='
+instance-id: id-mylocal0001
+local-hostname: cloudhost
+'
+
 echo "Creating user data iso $TMPISO"
 pushd $(mktemp -d)
 echo "$USERDATA" > user-data
