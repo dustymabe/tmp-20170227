@@ -29,7 +29,7 @@ date
 EOF
 
 set +e  # dont error out if tests fail
-sudo tunir --multi jobname --config-dir ./ &> ./tests.log
+sudo tunir --multi jobname --config-dir ./ 2>&1 | tee ./tests.log
 if [ $? -eq 0 ]; then
     echo 'passed' > ./tests_result.txt
 else
