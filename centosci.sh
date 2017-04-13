@@ -20,3 +20,4 @@ curl -O http://artifacts.ci.centos.org/sig-atomic/expires-7-days/f25image.tar.xz
 docker load -i image ./f25image.tar.xz
 
 # build container
+docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash

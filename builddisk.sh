@@ -68,4 +68,4 @@ popd
 
 # convert to qcow
 imgname=$(basename $imgdir/*body)
-qemu-img convert -O qcow2 $imgdir/*body ./$imgname.qcow2
+qemu-img convert -c -p -O qcow2 $imgdir/*body ./$imgname.qcow2
