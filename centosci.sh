@@ -24,5 +24,8 @@ docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash -c "chmod 7
 rsync -avh ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/$update/
 rsync -ah ./ostreerepo/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/$update/ostreerepo/
 
+# upload the cache back up so we can re-use it next time
+rsync -ah --delete ./cachedir/cache/ ./sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/f25UT/cache/
+
 results=$(<./tests_result.txt)
 echo -e "\nTESTS $results"
