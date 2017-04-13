@@ -28,4 +28,10 @@ systemctl --failed
 date
 EOF
 
-sudo tunir --multi jobname --config-dir ./
+set +e  # dont error out if tests fail
+sudo tunir --multi jobname --config-dir ./ &> ./tests.log
+if [ $? -eq 0 ]; then
+    echo 'passed' > ./tests_result.txt
+else
+    echo 'failed' > ./tests_result.txt
+fi
