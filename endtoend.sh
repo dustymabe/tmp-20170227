@@ -11,8 +11,17 @@ bodhi updates download --updateid=$1
 # koji download-build $1
 popd
 
+
+# create a yum repo and update the container
+# will pull in updates as well as rpms from the update
+# we are testing
+pushd $rpmsdir
+createrepo ./
+dnf update -y --repofrompath=cwd,./
+popd 
+
 # creates ostree from stable + rpms
-./buildostree.sh $rpmsdir/*
+./buildostree.sh $rpmsdir/*rpm
 
 # creates disk image from the ostree
 ./builddisk.sh ostreerepo/ 
