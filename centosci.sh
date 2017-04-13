@@ -2,6 +2,7 @@
 set -eux -o pipefail
 
 branch=$1
+update=$2
 
 yum install -y epel-release
 yum install -y ansible git
@@ -18,10 +19,10 @@ rsync -avh sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/f25UT/ 
 docker load -i ./f25image.tar.xz
 
 # build container
-docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash -c "chmod 777 /dev/kvm && libvirtd -d && virtlogd -d && cd /cwd/ && ./endtoend.sh $1" 
+docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash -c "chmod 777 /dev/kvm && libvirtd -d && virtlogd -d && cd /cwd/ && ./endtoend.sh $update" 
 
-rsync -avh ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/$1/
-rsync -ah ./ostreerepo/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/$1/ostreerepo/
+rsync -avh ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/$update/
+rsync -ah ./ostreerepo/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-7-days/$update/ostreerepo/
 
 results=$(<./tests_result.txt)
 echo -e "\nTESTS $results"
