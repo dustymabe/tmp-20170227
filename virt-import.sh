@@ -9,8 +9,8 @@ DISK=$1
 RAMSIZE='4096' # IN MB
 DISKSIZE='20'  # IN GB
 VCPUS='2'      # NUM of CPUs
-TMPISO="./user-data-iso.iso${RANDOM}"
-TMPDISK="./$(basename ${DISK})${RANDOM}"
+TMPISO="$(pwd)/user-data-iso.iso${RANDOM}"
+TMPDISK="$(pwd)/$(basename ${DISK})${RANDOM}"
 
 USERDATA='
 #cloud-config
