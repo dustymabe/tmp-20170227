@@ -1,0 +1,16 @@
+- job:
+    name: fedora-atomic-bodhi-update-test
+    node: atomic-sig
+    builders:
+        - inject:
+            properties-content: |
+                MACHINE_COUNT=1
+                GIT_REPO_URL='https://github.com/dustymabe/tmp-20170227.git'
+                GIT_REPO_REF='f25'
+                TEST_CMD='./centosci/centosci.sh $GIT_REPO_REF $UPDATE'
+        - centos-ci-bootstrap
+- builder:
+    name: centos-ci-bootstrap
+    builders:
+        - python:
+            !include-raw: './run.py'
