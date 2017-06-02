@@ -30,7 +30,7 @@ EOF
 
 set +e  # dont error out if tests fail
 sudo tunir --multi jobname --config-dir ./ 2>&1 | tee ./tests.log
-if [ $? -eq 0 ]; then
+if [ ${PIPESTATUS[0]} -eq 0 ]; then
     echo 'passed' > ./tests_result.txt
 else
     echo 'failed' > ./tests_result.txt
