@@ -21,10 +21,10 @@ sudo sed -i s/gpgverify/gpg-verify/ /etc/ostree/remotes.d/fedora-atomic.conf
 cat /etc/ostree/remotes.d/*
 PLAYBOOK tests/improved-sanity-test/main.yml --tags cloud_image
 rpm -qa
-SYSTEMD_COLORS=0 systemctl --failed
+systemctl --failed &>/dev/null
 @@ sudo reboot
 SLEEP 40
-SYSTEMD_COLORS=0 systemctl --failed
+systemctl --failed &>/dev/null
 date
 EOF
 
