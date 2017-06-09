@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux -o pipefail
 
-git clone -b dusty-disable-rpm-ostree-upgrade https://github.com/dustymabe/atomic-host-tests.git
+git clone https://github.com/projectatomic/atomic-host-tests.git
 currentdir=$(pwd)
 
 cat <<EOF > jobname.cfg
@@ -19,7 +19,7 @@ cat <<'EOF' > jobname.txt
 rpm-ostree status --json  | python -m json.tool
 sudo sed -i s/gpgverify/gpg-verify/ /etc/ostree/remotes.d/fedora-atomic.conf
 cat /etc/ostree/remotes.d/*
-PLAYBOOK tests/improved-sanity-test/main.yml
+PLAYBOOK tests/improved-sanity-test/main.yml --tags cloud_image
 rpm -qa
 systemctl --failed
 @@ sudo reboot
