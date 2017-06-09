@@ -36,4 +36,5 @@ if [ ${PIPESTATUS[0]} -eq 0 ]; then
     echo 'passed' > ./tests_result.txt
 else
     echo 'failed' > ./tests_result.txt
+    exit 1
 fi
