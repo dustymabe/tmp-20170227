@@ -1,7 +1,7 @@
 #!/bin/bash
 set -eux -o pipefail
 
-git clone https://github.com/projectatomic/atomic-host-tests.git
+git clone -b dusty-tags-cloud-image https://github.com/dustymabe/atomic-host-tests.git
 currentdir=$(pwd)
 
 cat <<EOF > jobname.cfg
@@ -15,6 +15,8 @@ user = fedora
 image = $1
 EOF
 
+# --tags cloud_image  to ansible commands doesn't work right now
+# https://github.com/kushaldas/tunir/issues/54
 cat <<'EOF' > jobname.txt
 rpm-ostree status --json  | python -m json.tool
 sudo sed -i s/gpgverify/gpg-verify/ /etc/ostree/remotes.d/fedora-atomic.conf
