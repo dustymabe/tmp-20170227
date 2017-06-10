@@ -30,7 +30,7 @@ rsync -avh ./update.html ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@ar
 rsync -ah ./ostreerepo/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/$update/ostreerepo/
 
 # upload the cache back up so we can re-use it next time
-rsync -ah --delete ./cachedir/cache/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/f25UT/cache/
+rsync -ah --delete ./cachedir/cache/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/f25UT/cachedir/cache/
 
 results=$(<./tests_result.txt)
 echo -e "\nTESTS $results"
