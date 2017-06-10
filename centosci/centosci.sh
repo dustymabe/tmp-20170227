@@ -21,7 +21,12 @@ docker load -i ./f25image.tar.xz
 # build container
 docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash -c "chmod 777 /dev/kvm && libvirtd -d && virtlogd -d && cd /cwd/ && ./endtoend.sh $update" 
 
-rsync -avh ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/$update/
+# Create file to link back to bodhi update in web ui
+cat <<EOF > update.html
+<html><a href='https://bodhi.fedoraproject.org/updates/${update}>${update}</a></html>
+EOF
+
+rsync -avh ./update.html ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/$update/
 rsync -ah ./ostreerepo/ sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/$update/ostreerepo/
 
 # upload the cache back up so we can re-use it next time
