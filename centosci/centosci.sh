@@ -23,7 +23,7 @@ docker run -it --rm -v $(pwd)/:/cwd/ --privileged f25image /bin/bash -c "chmod 7
 
 # Create file to link back to bodhi update in web ui
 cat <<EOF > update.html
-<html><a href='https://bodhi.fedoraproject.org/updates/${update}>${update}</a></html>
+<html><a href='https://bodhi.fedoraproject.org/updates/${update}'>${update}</a></html>
 EOF
 
 rsync -avh ./update.html ././tests_result.txt ./tests.log ./*qcow2 sig-atomic@artifacts.ci.centos.org::sig-atomic/expires-14-days/$update/
